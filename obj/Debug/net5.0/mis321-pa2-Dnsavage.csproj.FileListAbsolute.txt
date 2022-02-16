@@ -1,0 +1,16 @@
+C:\Users\Plati\Desktop\Spring2022\MIS321\repos\mis321-pa2-Dnsavage\bin\Debug\net5.0\mis321-pa2-Dnsavage.exe
+C:\Users\Plati\Desktop\Spring2022\MIS321\repos\mis321-pa2-Dnsavage\bin\Debug\net5.0\mis321-pa2-Dnsavage.deps.json
+C:\Users\Plati\Desktop\Spring2022\MIS321\repos\mis321-pa2-Dnsavage\bin\Debug\net5.0\mis321-pa2-Dnsavage.runtimeconfig.json
+C:\Users\Plati\Desktop\Spring2022\MIS321\repos\mis321-pa2-Dnsavage\bin\Debug\net5.0\mis321-pa2-Dnsavage.runtimeconfig.dev.json
+C:\Users\Plati\Desktop\Spring2022\MIS321\repos\mis321-pa2-Dnsavage\bin\Debug\net5.0\mis321-pa2-Dnsavage.dll
+C:\Users\Plati\Desktop\Spring2022\MIS321\repos\mis321-pa2-Dnsavage\bin\Debug\net5.0\ref\mis321-pa2-Dnsavage.dll
+C:\Users\Plati\Desktop\Spring2022\MIS321\repos\mis321-pa2-Dnsavage\bin\Debug\net5.0\mis321-pa2-Dnsavage.pdb
+C:\Users\Plati\Desktop\Spring2022\MIS321\repos\mis321-pa2-Dnsavage\obj\Debug\net5.0\mis321-pa2-Dnsavage.csproj.AssemblyReference.cache
+C:\Users\Plati\Desktop\Spring2022\MIS321\repos\mis321-pa2-Dnsavage\obj\Debug\net5.0\mis321-pa2-Dnsavage.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Plati\Desktop\Spring2022\MIS321\repos\mis321-pa2-Dnsavage\obj\Debug\net5.0\mis321-pa2-Dnsavage.AssemblyInfoInputs.cache
+C:\Users\Plati\Desktop\Spring2022\MIS321\repos\mis321-pa2-Dnsavage\obj\Debug\net5.0\mis321-pa2-Dnsavage.AssemblyInfo.cs
+C:\Users\Plati\Desktop\Spring2022\MIS321\repos\mis321-pa2-Dnsavage\obj\Debug\net5.0\mis321-pa2-Dnsavage.csproj.CoreCompileInputs.cache
+C:\Users\Plati\Desktop\Spring2022\MIS321\repos\mis321-pa2-Dnsavage\obj\Debug\net5.0\mis321-pa2-Dnsavage.dll
+C:\Users\Plati\Desktop\Spring2022\MIS321\repos\mis321-pa2-Dnsavage\obj\Debug\net5.0\ref\mis321-pa2-Dnsavage.dll
+C:\Users\Plati\Desktop\Spring2022\MIS321\repos\mis321-pa2-Dnsavage\obj\Debug\net5.0\mis321-pa2-Dnsavage.pdb
+C:\Users\Plati\Desktop\Spring2022\MIS321\repos\mis321-pa2-Dnsavage\obj\Debug\net5.0\mis321-pa2-Dnsavage.genruntimeconfig.cache
