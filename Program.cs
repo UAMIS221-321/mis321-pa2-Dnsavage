@@ -9,16 +9,17 @@ namespace mis321_pa2_Dnsavage
         {
             MainMenu();
         }
+        //Gets the main menu choice and passes it along for routing
         static void MainMenu()
         {
             NewGame playerInfo = new NewGame();
 
             Displays.DisplayMainMenu();
-            int menuChoice = playerInfo.GetValidChoice(2);
+            int menuChoice = playerInfo.GetValidChoice(3);
             while (menuChoice < 1)
             {
                 Displays.DisplayMainMenu();
-                menuChoice = playerInfo.GetValidChoice(2);
+                menuChoice = playerInfo.GetValidChoice(3);
             }
             RouteMainMenu(playerInfo, menuChoice);
         }
@@ -35,6 +36,10 @@ namespace mis321_pa2_Dnsavage
                     InitializeBattle(playerInfo, players);
                     break;
                 case 2:
+                    AboutFile.DisplayAbout();
+                    MainMenu();
+                    break;
+                case 3:
                     Displays.ThankUser();
                     Environment.Exit(0);
                     break;

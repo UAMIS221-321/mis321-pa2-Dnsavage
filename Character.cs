@@ -13,9 +13,12 @@ namespace mis321_pa2_Dnsavage
         public int AttackStrength {get; set;}
         public int DefensePower {get; set;}
         public double AttackMult {get; set;}
+        public bool SpecialSuccess {get; set;}//NOT IMPLEMENTED
         public IAttack AttackBehavior {get; set;}
         public IDefend DefendBehavior {get; set;}
+        public ISpecial SpecialBehavior {get; set;}
 
+        //Sets the starting stats for each character
         public static void InitializeCharacters(NewGame playerInfo, Player[] players)
         {
             for (int i = 0; i < 2; i++)
@@ -56,7 +59,7 @@ namespace mis321_pa2_Dnsavage
             int actionStrength = action.Next(players[currentPlayer].PlayerChar.Power) + 1;
             return actionStrength;
         }
-
+        //Gets the selected character's name
         private static string GetCharName(Player[] players, int playerNum)
         {
             switch (players[playerNum].CharacterID)
@@ -67,7 +70,7 @@ namespace mis321_pa2_Dnsavage
             }
             return "Davy Jones";
         }
-
+        //Generates a character's power
         private static int GenPower()
         {
             Random power = new Random();
@@ -78,18 +81,24 @@ namespace mis321_pa2_Dnsavage
         {
             switch (players[playerNum].CharacterID)
             {
-                case 1: players[playerNum].PlayerChar.AttackBehavior = new Distract();
+                case 1: 
+                    players[playerNum].PlayerChar.AttackBehavior = new Distract();
                     players[playerNum].PlayerChar.DefendBehavior = new Hide();
+                    players[playerNum].PlayerChar.SpecialBehavior = new Jar();
                     break;
-                case 2: players[playerNum].PlayerChar.AttackBehavior = new Sword();
+                case 2: 
+                    players[playerNum].PlayerChar.AttackBehavior = new Sword();
                     players[playerNum].PlayerChar.DefendBehavior = new Rope();
+                    players[playerNum].PlayerChar.SpecialBehavior = new Motive();
                     break;
-                case 3: players[playerNum].PlayerChar.AttackBehavior = new Cannon();
+                case 3: 
+                    players[playerNum].PlayerChar.AttackBehavior = new Cannon();
                     players[playerNum].PlayerChar.DefendBehavior = new Claw();
+                    players[playerNum].PlayerChar.SpecialBehavior = new Servitude();
                     break;
             }
         }
-
+        //Selects the appropriate attack multiplier based on each selected character
         private static double GetCharMult(Player[] players, int playerNum)
         {
             const double BONUS_MULT = 1.2;

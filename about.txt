@@ -1,0 +1,35 @@
+-Battle of Calypso:
+
+This event was an act of war between the armadas of the Brethren Court 
+and the East India Trading Company.
+
+The battle was the deciding factor in Lord Cutler Beckett's 'War Against Piracy'.
+
+The highlight of the battle featured a maelstrom, manifested by the sea goddess Calypso.
+Within this maelstrom, the crews of the Black Pearl and the Flying Dutchman clashed.
+
+-Jack Sparrow:
+
+A legendary pirate of the Seven Seas, Jack Sparrow is the irreverent trickster of the Caribbean.
+
+Attack Type: 'Distract' - Confuses the opponent, causing them to recklessly attack and injure themselves in the process.
+Defense Type: 'Hide' - Escapes from the heat of battle for but a brief moment.
+Specialty Attack: 'Jar of Dirt' - Throws dirt into the eyes of the opponent to stun them for a moment.
+
+-William Turner:
+
+A blacksmith by trade, a swordsman by pursuit, and a pirate by fate, 
+Will Turner realizes that some rules are meant to be broken.
+
+Attack Type: 'Sword Slash' - Cuts through the opponent, passionately.
+Defense Type: 'Rope Swing' - Swings from ropes on the mast to momentarily escape danger.
+Specialty Attack: 'Ulterior Motive' - Betray those on your side, so that they may become...not on your side.
+
+-Davy Jones:
+
+A great sailor until he fell in love with the sea goddess Calypso, 
+Davy Jones is tasked with ferrying the souls of those who died at sea to the worlds beyond.
+
+Attack Type: 'Canon Fire' - Fires the triple chaser canons to intercept enemy ships.
+Defense Type: 'Claw Shield' - Deflects attacks with Davy Jones's claw, bending and snapping swords in the process.
+Specialty Attack: 'Eternity of Servitude' - Recruit new crewmates...part of the crew, part of the ship.

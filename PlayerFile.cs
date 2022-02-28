@@ -3,6 +3,7 @@ namespace mis321_pa2_Dnsavage
 {
     public class PlayerFile
     {
+        //Gets user player names
         public static void GetUserNames(NewGame playerInfo, Player[] players)
         {
             Console.Clear();
@@ -14,7 +15,7 @@ namespace mis321_pa2_Dnsavage
             players[1] = new Player();
             players[1].PlayerName = playerInfo.GetPlayerName();
         }
-
+        //Gets character selections
         public static void SelectCharacters(NewGame playerInfo, Player[] players)
         {
             for(int i = 0; i < 2; i++)

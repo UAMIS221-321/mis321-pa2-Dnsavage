@@ -9,7 +9,7 @@ namespace mis321_pa2_Dnsavage
             Console.Clear();
             Console.WriteLine("Battle of Calypso\n");
             Console.WriteLine("Please select an option:");
-            Console.WriteLine("1.) New Game\n2.) Exit");
+            Console.WriteLine("1.) New Game\n2.) About\n3.) Exit");
         }
 
         public static void PromptName1()
