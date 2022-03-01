@@ -5,6 +5,7 @@ namespace mis321_pa2_Dnsavage
 {
     public class AboutFile
     {
+        //EXTRA: Displays information about the lore of the game and the characters within it
         public static void DisplayAbout()
         {
             Console.Clear();

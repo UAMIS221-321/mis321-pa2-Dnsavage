@@ -56,22 +56,27 @@ namespace mis321_pa2_Dnsavage
         //Primary selection phase: This is where players will select their preferred action during the game
         static void SelectionPhase(NewGame playerInfo, Player[] players, int currentPlayer)
         {
+            Displays.DisplayModifier(players, currentPlayer);
             Displays.PromptSelection(players, currentPlayer);
-            int selectedAction = playerInfo.GetValidChoice(5);
+            int selectedAction = playerInfo.GetValidChoice(6);
             while (selectedAction < 1)
             {
                 Displays.PromptSelection(players, currentPlayer);
-                selectedAction = playerInfo.GetValidChoice(5);
+                selectedAction = playerInfo.GetValidChoice(6);
             }
             RouteSelection(playerInfo, players, currentPlayer, selectedAction);
         }
         static void RouteSelection(NewGame playerInfo, Player[] players, int currentPlayer, int selectedAction)
         {
-            if (selectedAction == 1 || selectedAction == 2)
+            if (selectedAction < 3)
             {
                 ActionPhase(playerInfo, players, currentPlayer, selectedAction);
             }
-            else if (selectedAction == 3 || selectedAction == 4)
+            else if (selectedAction == 3)
+            {
+                SpecialPhase(playerInfo, players, currentPlayer);
+            }
+            else if (selectedAction == 4 || selectedAction == 5)
             {
                 RouteStatsView(playerInfo, players, currentPlayer, selectedAction);
             }
@@ -94,6 +99,18 @@ namespace mis321_pa2_Dnsavage
             CheckWinCondition(players);
             SelectionPhase(playerInfo, players, Battle.NewTurn(players, currentPlayer));
         }
+        //Routes flow of control to calculate chance of success, followed by a report of what happened
+        static void SpecialPhase(NewGame playerInfo, Player[] players, int currentPlayer)
+        {
+            Battle.SpecialMove(playerInfo, players, currentPlayer);
+            SpecialReport(playerInfo, players, currentPlayer);
+        }
+        //EXTRA: Displays the outcome of special moves
+        static void SpecialReport(NewGame playerInfo, Player[] players, int currentPlayer)
+        {
+            Displays.DisplaySpecial(players, currentPlayer);
+            SelectionPhase(playerInfo, players, Battle.NewTurn(players, currentPlayer));
+        }
         //Checks if either player has won
         static void CheckWinCondition(Player[] players)
         {
@@ -111,11 +128,11 @@ namespace mis321_pa2_Dnsavage
         //Determines which stats to show the current player based off their action selection
         static void RouteStatsView(NewGame playerInfo, Player[] players, int currentPlayer, int selectedAction)
         {
-            if (selectedAction == 3)
+            if (selectedAction == 4)
             {
                 Displays.DisplayStats(players, currentPlayer);
             }
-            else if (selectedAction == 4)
+            else if (selectedAction == 5)
             {
                 if (currentPlayer == 0)
                 {
@@ -146,7 +163,7 @@ namespace mis321_pa2_Dnsavage
             }
             RouteConfirmSurrender(players, currentPlayer, surrenderSelect);
         }
-        //Returns to main menu if a player chooses to surrender
+        //EXTRA: Returns to main menu if a player chooses to surrender
         static void RouteConfirmSurrender(Player[] players, int currentPlayer, int surrenderSelect)
         {
             if (surrenderSelect == 1)

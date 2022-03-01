@@ -13,10 +13,11 @@ namespace mis321_pa2_Dnsavage
         public int AttackStrength {get; set;}
         public int DefensePower {get; set;}
         public double AttackMult {get; set;}
-        public bool SpecialSuccess {get; set;}//NOT IMPLEMENTED
+        public int ModifyCounter {get; set;}
         public IAttack AttackBehavior {get; set;}
         public IDefend DefendBehavior {get; set;}
         public ISpecial SpecialBehavior {get; set;}
+        public IModify EffectModifier {get; set;}
 
         //Sets the starting stats for each character
         public static void InitializeCharacters(NewGame playerInfo, Player[] players)
@@ -30,6 +31,8 @@ namespace mis321_pa2_Dnsavage
                 players[i].PlayerChar.DefensePower = 0;
                 GetCharAbility(players, i);
                 players[i].PlayerChar.AttackMult = GetCharMult(players, i);
+                players[i].PlayerChar.ModifyCounter = 0;
+                players[i].PlayerChar.EffectModifier = new NoModifier();
             }
         }
         //Initializes opponent's defense on first turn of the game
@@ -55,6 +58,14 @@ namespace mis321_pa2_Dnsavage
         //Calculates player's active action (attack or defend)
         public static int ActionCalc(Player[] players, int currentPlayer, int selectedAction)
         {
+            if (selectedAction == 1 && players[currentPlayer].PlayerChar.EffectModifier.Modify() == 1)
+            {
+                return 0;
+            }
+            else if (selectedAction == 2 && players[currentPlayer].PlayerChar.EffectModifier.Modify() == 2)
+            {
+                return 0;
+            }
             Random action = new Random();
             int actionStrength = action.Next(players[currentPlayer].PlayerChar.Power) + 1;
             return actionStrength;

@@ -44,7 +44,8 @@ namespace mis321_pa2_Dnsavage
         public static void PromptSelection(Player[] players, int currentPlayer)
         {
             Console.WriteLine($"{players[currentPlayer].PlayerName}, what will you do?");
-            Console.WriteLine("1.) Attack\n2.) Defend\n3.) View My Stats\n4.) View Opponent's Stats\n5.) Surrender");
+            Console.WriteLine($"1.) Attack\n2.) Defend\n3.) {players[currentPlayer].PlayerChar.SpecialBehavior.Special()}");
+            Console.WriteLine("4.) View My Stats\n5.) View Opponent's Stats\n6.) Surrender");
         }
 
         //Routes action dialogue displays for gameplay
@@ -55,7 +56,7 @@ namespace mis321_pa2_Dnsavage
                 DisplayAttack(players, currentPlayer, actionPower);
                 if (dmgDone == actionPower)
                 {
-                    DisplayAllHit();//THIS SHOULDN'T BE POSSIBLE; DEFENSE SHOULD ALWAYS BE AT LEAST 1
+                    DisplayAllHit();
                 }
                 else if (dmgDone < actionPower)
                 {
@@ -71,10 +72,15 @@ namespace mis321_pa2_Dnsavage
                 DisplayDefense(players, currentPlayer, actionPower);
             }
         }
+        //EXTRA: Displays modifier, if any, for the current player's character
+        public static void DisplayModifier(Player[] players, int currentPlayer)
+        {
+            players[currentPlayer].PlayerChar.EffectModifier.Effect();
+        }
 
         public static void DisplayNewTurn(Player[] players, int currentPlayer)
         {
-            Console.WriteLine($"It is now {players[currentPlayer].PlayerName}'s turn!");
+            Console.WriteLine($"It is now {players[currentPlayer].PlayerName}'s turn!\n");
         }
 
         public static void DisplayAttack(Player[] players, int currentPlayer, int actionPower)
@@ -85,6 +91,33 @@ namespace mis321_pa2_Dnsavage
         public static void DisplayDefense(Player[] players, int currentPlayer, int actionPower)
         {
             Console.Write($"{players[currentPlayer].PlayerName} used {players[currentPlayer].PlayerChar.DefendBehavior.Defend()} for {actionPower} extra defense, totaling {players[currentPlayer].PlayerChar.DefensePower} defense!\n\n");
+        }
+        //EXTRA: Displays special moves
+        public static void DisplaySpecial(Player[] players, int currentPlayer)
+        {
+            Console.WriteLine($"{players[currentPlayer].PlayerName} used {players[currentPlayer].PlayerChar.SpecialBehavior.Special()}!");
+            if (currentPlayer == 0)
+            {
+                if (players[1].PlayerChar.EffectModifier.Modify() < 0)
+                {
+                    Console.WriteLine("It was ineffective!\n");
+                }
+                else
+                {
+                    Console.WriteLine();
+                }
+            }
+            else
+            {
+                if (players[0].PlayerChar.EffectModifier.Modify() < 0)
+                {
+                    Console.WriteLine("It was ineffective!\n");
+                }
+                else
+                {
+                    Console.WriteLine();
+                }
+            }
         }
 
         public static void DisplayAllHit()
@@ -170,8 +203,6 @@ namespace mis321_pa2_Dnsavage
             Console.WriteLine($"Character: {players[playerNum].PlayerChar.Name}");
             Console.WriteLine($"Max Power: {players[playerNum].PlayerChar.Power}");
             Console.WriteLine($"Health: {players[playerNum].PlayerChar.Health}\n");
-            //Console.WriteLine($"Defense: {players[playerNum].PlayerChar.DefensePower}"); resets after opponent turn anyways
-                //IF WANTING TO DISPLAY DEFENSE BEFORE MOVE, NEED TO MOVE WHERE DEFENSE IS FIRST CALCULATED
             Console.WriteLine("Press enter to continue");
             Console.ReadLine();
             Console.Clear();

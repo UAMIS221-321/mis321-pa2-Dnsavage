@@ -4,6 +4,7 @@ namespace mis321_pa2_Dnsavage
 {
     public class NewGame
     {
+        //Gets the current player's name
         public string GetPlayerName()
         {
             //Console.WriteLine($"Player {playerNum}: Enter your name:");
@@ -18,6 +19,7 @@ namespace mis321_pa2_Dnsavage
             Console.ResetColor();
             return playerName;
         }
+        //Gets valid choices for menu selections
         public int GetValidChoice(int numOptions)
         {
             //May can use this method for int validation throughout
